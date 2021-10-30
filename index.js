@@ -1,31 +1,51 @@
 const fs = require('fs')
 const inq = require('inquirer')
 
-const questions = [
+const managerQuestions = [
     {
         type: "input",
-        message: "What is your name?",
+        message: "Enter Team Manager's name.",
         name: "name",
     },
     {
         type: "input",
-        message: "What is your name?",
-        name: "name",
-    }
+        message: "Enter Team Manager's ID number.",
+        name: "ID",
+    },
+    {
+        type: "input",
+        message: "Enter Team Manager's email address.",
+        name: "email",
+    },
+    {
+        type: "input",
+        message: "Enter Team Manager's office phone number.",
+        name: "phoneNumber",
+    },   
 ]
 
-inq
-    .prompt(questions).then(data => {
-        const {blank} = data
+function createManager() {
+    inq.prompt(managerQuestions).then(data => {
+        const {name, ID, email, phoneNumber} = data
 
-        if(blank) {
-            console.log("Please fill out all questions! To try again run the program again")
-            return
-        }
-
-        const HTML = ``
-
-
-        fs.writeFile('generated.html', HTML, (err) =>
-        err ? console.error(err) : console.log('No errors'))
+        addEmployee(name, ID, email, phoneNumber)
     })
+}
+
+function createEmployee() {
+    again = true
+
+    const employeeType = [
+        {
+            type: "list",
+            message: "What type of employee do you want to add?",
+            name: "name",
+            choices: ["Engineer", "Intern", "None"],
+        },
+    ]
+
+    while (again) {
+        inq.prompt().then()
+    }
+
+}
