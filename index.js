@@ -164,8 +164,10 @@ function engineerCard(i) {
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${Id}</li>
       <li class="list-group-item">Email: ${email}</li>
-      <li class="list-group-item">Github: ${github}</li>
     </ul>
+    <div class="card-body">
+        <a href="https://github.com/${github}" class="card-link">GitHub</a>
+    </div>
   </div>`
 
   teamCards.push(html)
