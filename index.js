@@ -139,7 +139,7 @@ function createIntern() {
 
 function managerCard(i) {
     const {name, Id, email, officeNumber} = i
-    
+
     let html = `<div class="card" style="width: 18rem;">
     <div class="card-header">
       ${name}<br/><br/>Manager 
@@ -155,7 +155,20 @@ function managerCard(i) {
 }
 
 function engineerCard(i) {
-    console.log(i)
+    const {name, Id, email, github} = i
+    
+    let html = `<div class="card" style="width: 18rem;">
+    <div class="card-header">
+      ${name}<br/><br/>Engineer 
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID: ${Id}</li>
+      <li class="list-group-item">Email: ${email}</li>
+      <li class="list-group-item">Office number: ${github}</li>
+    </ul>
+  </div>`
+
+  teamCards.push(html)
 }
 
 function internCard(i) {
