@@ -68,7 +68,40 @@ function teamQuestion() {
 }
 
 function createEngineer() {
+    inq
+        .prompt([
+            {
+                type: "input",
+                message: "Enter Engineer's name.",
+                name: "name",
+            },
+            {
+                type: "input",
+                message: "Enter Engineer's ID number.",
+                name: "ID",
+            },
+            {
+                type: "input",
+                message: "Enter Engineer's email address.",
+                name: "email",
+            },
+            {
+                type: "input",
+                message: "Enter Engineer's GitHub username.",
+                name: "github",
+            },   
+        ])
+    
+        .then(data => {
+            const {name, ID, email, github} = data
 
+            const engineer = new Engineer(name, ID, email, github)
+            team.push(engineer)
+            console.log(team)
+            console.log(engineer)
+
+            teamQuestion()
+        })
 }
 
 function createIntern() {
