@@ -38,8 +38,6 @@ function createManager() {
 
             const manager = new Manager(name, ID, email, phoneNumber)
             team.push(manager)
-            console.log(team)
-            console.log(manager)
 
             teamQuestion()
         })
@@ -63,6 +61,7 @@ function teamQuestion() {
                 createIntern()
             } else {
                 console.log("Team finished.")
+                console.log(team)
             }
         })
 }
@@ -97,15 +96,44 @@ function createEngineer() {
 
             const engineer = new Engineer(name, ID, email, github)
             team.push(engineer)
-            console.log(team)
-            console.log(engineer)
 
             teamQuestion()
         })
 }
 
 function createIntern() {
+    inq
+        .prompt([
+            {
+                type: "input",
+                message: "Enter Intern's name.",
+                name: "name",
+            },
+            {
+                type: "input",
+                message: "Enter Intern's ID number.",
+                name: "ID",
+            },
+            {
+                type: "input",
+                message: "Enter Intern's email address.",
+                name: "email",
+            },
+            {
+                type: "input",
+                message: "Enter Intern's school name.",
+                name: "school",
+            },   
+        ])
+    
+        .then(data => {
+            const {name, ID, email, school} = data
 
+            const intern = new Intern(name, ID, email, school)
+            team.push(intern)
+
+            teamQuestion()
+        })
 }
 
 createManager()
