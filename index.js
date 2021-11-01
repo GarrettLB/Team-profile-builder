@@ -164,7 +164,7 @@ function engineerCard(i) {
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${Id}</li>
       <li class="list-group-item">Email: ${email}</li>
-      <li class="list-group-item">Office number: ${github}</li>
+      <li class="list-group-item">Github: ${github}</li>
     </ul>
   </div>`
 
@@ -172,7 +172,20 @@ function engineerCard(i) {
 }
 
 function internCard(i) {
-    console.log(i)
+    const {name, Id, email, school} = i
+    
+    let html = `<div class="card" style="width: 18rem;">
+    <div class="card-header">
+      ${name}<br/><br/>Intern 
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID: ${Id}</li>
+      <li class="list-group-item">Email: ${email}</li>
+      <li class="list-group-item">School: ${school}</li>
+    </ul>
+  </div>`
+
+  teamCards.push(html)
 }
 
 function teamLoop(team) {
