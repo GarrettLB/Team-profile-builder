@@ -40,7 +40,39 @@ function createManager() {
             team.push(manager)
             console.log(team)
             console.log(manager)
+
+            teamQuestion()
         })
+}
+
+function teamQuestion() {
+    inq
+        .prompt([
+            {
+                type: "list",
+                message: "What would you like to add to your team next?",
+                name: "addteam",
+                choices: ["Engineer", "Intern", "Nothing"]
+            }
+        ])
+
+        .then(data => {
+            if (data.addteam === "Engineer") {
+                createEngineer()
+            } else if (data.addteam === "Intern") {
+                createIntern()
+            } else {
+                console.log("Team finished.")
+            }
+        })
+}
+
+function createEngineer() {
+
+}
+
+function createIntern() {
+
 }
 
 createManager()
