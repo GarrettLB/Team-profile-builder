@@ -1,12 +1,12 @@
-const fs = require('fs')
 const inq = require('inquirer')
-
+const template = require('./src/template')
 const Employee = require('./lib/Employee')
 const Engineer = require('./lib/Engineer')
 const Manager = require('./lib/Manager')
 const Intern = require('./lib/Intern')
 
 const team = []
+const teamCards = []
 
 function createManager() {
     inq
@@ -59,9 +59,10 @@ function teamQuestion() {
                 createEngineer()
             } else if (data.addteam === "Intern") {
                 createIntern()
-            } else {
+            } else if (data.addteam === "Nothing") {
                 console.log("Team finished.")
-                console.log(team)
+
+                teamLoop(team)
             }
         })
 }
@@ -134,6 +135,30 @@ function createIntern() {
 
             teamQuestion()
         })
+}
+
+function managerCard(i) {
+    console.log(i.name)
+}
+
+function engineerCard(i) {
+    console.log(i)
+}
+
+function internCard(i) {
+    console.log(i)
+}
+
+function teamLoop(team) {
+    for (let i of team) {
+        if (i.getRole() === "Manager") {
+            managerCard(i)
+        } else if (i.getRole() === "Engineer") {
+            engineerCard(i)
+        } else if (i.getRole() === "Intern") {
+            internCard(i)
+        }
+    }
 }
 
 createManager()
