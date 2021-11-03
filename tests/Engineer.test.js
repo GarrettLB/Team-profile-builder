@@ -1,6 +1,6 @@
 const Engineer = require("../lib/Engineer")
 
-describe("Manager", () => {
+describe("Engineer", () => {
     describe("Initialization", () => {
         it("should extend the Employee class and create a new object with name, id, email, and github properties", () => {
 
