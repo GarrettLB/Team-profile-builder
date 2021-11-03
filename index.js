@@ -1,7 +1,5 @@
 const fs = require('fs')
-const inq = require('inquirer')
-const template = require('./src/template')
-const Employee = require('./lib/Employee')
+const inq = require('inquirer') 
 const Engineer = require('./lib/Engineer')
 const Manager = require('./lib/Manager')
 const Intern = require('./lib/Intern')
@@ -246,9 +244,8 @@ function generateHtml(cards) {
 </body>
 </html>`
 
-fs.writeFile("./dist/generated.html", html, (err) => {
-err ? console.error(err) : console.log('Success!')})
-
+    fs.writeFile("./dist/generated.html", html, (err) => {
+        err ? console.error(err) : console.log('Success!')})
 }
 
 createManager()
