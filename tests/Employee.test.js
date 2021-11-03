@@ -17,7 +17,7 @@ describe("Employee", () => {
 
             const obj1 = new Employee("Chris", 1, "chris@provider.com");
             
-            expect(obj1.getName).toEqual("Chris")
+            expect(obj1.getName()).toEqual("Chris")
         })
     })
 
@@ -26,7 +26,7 @@ describe("Employee", () => {
 
             const obj2 = new Employee("Chris", 1, "chris@provider.com");
             
-            expect(obj2.getId).toEqual(1)
+            expect(obj2.getId()).toEqual(1)
         })
     })
 
@@ -35,7 +35,7 @@ describe("Employee", () => {
 
             const obj3 = new Employee("Chris", 1, "chris@provider.com");
             
-            expect(obj3.getRole).toEqual("Employee")
+            expect(obj3.getRole()).toEqual("Employee")
         })
     })
 })
