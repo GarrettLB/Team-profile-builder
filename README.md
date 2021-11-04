@@ -18,3 +18,4 @@ To start using the program type "npm start in the terminal".
 Walk-through video: https://drive.google.com/file/d/1HXt2kjzN4fbMXOA7hRD67IOE3xGSXz34/view?usp=sharing
 
 Screenshot:
+<img src="./assets/images/Screenshot.png">
