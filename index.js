@@ -137,44 +137,37 @@ function createIntern() {
 }
 
 function managerCard(i) {
-    const {name, Id, email, officeNumber} = i
-
     let html = 
-`<div class = "col-4">
+`<div class = "col-4 mt-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-header">
-                  ${name}<br/><br/>Manager 
+                  ${i.getName()}<br/><br/>${i.getRole()} 
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">ID: ${Id}</li>
-                  <li class="list-group-item">Email: <a href="mailto:${email}" target="_blank">${email}</a></li>
-                  <li class="list-group-item">Office number: ${officeNumber}</li>
+                  <li class="list-group-item">ID: ${i.getId()}</li>
+                  <li class="list-group-item">Email: <a href="mailto:${i.getEmail()}" target="_blank">${i.getEmail()}</a></li>
+                  <li class="list-group-item">Office number: ${i.getOfficeNumber()}</li>
                 </ul>
             </div>
           </div>`
-
-
 
   teamCards.push(html)
 }
 
 function engineerCard(i) {
-    const {name, Id, email, github} = i
-    
     let html = 
-    
 `       
-          <div class = "col-4">
+          <div class = "col-4 mt-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-header">
-                  ${name}<br/><br/>Engineer 
+                  ${i.getName()}<br/><br/>${i.getRole()} 
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">ID: ${Id}</li>
-                  <li class="list-group-item">Email: <a href="mailto:${email}" target="_blank">${email}</a></li>
+                  <li class="list-group-item">ID: ${i.getId()}</li>
+                  <li class="list-group-item">Email: <a href="mailto:${i.getEmail()}" target="_blank">${i.getEmail()}</a></li>
                 </ul>
                 <div class="card-body">
-                  <a href="https://github.com/${github}" class="card-link" target="_blank">GitHub</a>
+                  <a href="https://github.com/${i.getGithub()}" class="card-link" target="_blank">GitHub</a>
                 </div>
             </div>
           </div>`
@@ -183,19 +176,17 @@ function engineerCard(i) {
 }
 
 function internCard(i) {
-    const {name, Id, email, school} = i
-    
     let html = 
 `       
-          <div class = "col-4">
+          <div class = "col-4 mt-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-header">
-                  ${name}<br/><br/>Intern 
+                  ${i.getName()}<br/><br/>${i.getRole()} 
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">ID: ${Id}</li>
-                  <li class="list-group-item">Email: <a href="mailto:${email}" target="_blank">${email}</a></li>
-                  <li class="list-group-item">School: ${school}</li>
+                  <li class="list-group-item">ID: ${i.getId()}</li>
+                  <li class="list-group-item">Email: <a href="mailto:${i.getEmail()}" target="_blank">${i.getEmail()}</a></li>
+                  <li class="list-group-item">School: ${i.getSchool()}</li>
                 </ul>
             </div>
           </div>`
@@ -235,6 +226,10 @@ function generateHtml(cards) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
+    <header class="bg-secondary text-white">
+        <h1 class="text-center">Team Builder</h1>
+    </header>
+
     <div class="container">
         <div class="row">
           ${employeeCards}
