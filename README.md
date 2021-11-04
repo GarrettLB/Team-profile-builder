@@ -15,7 +15,7 @@ Simply start the program and enter your teams information and the program will c
 ## Installation and Use
 To install simply download the source code and type "npm install" in the terminal. 
 To start using the program type "npm start in the terminal".
-Walk-through video: https://drive.google.com/file/d/1HXt2kjzN4fbMXOA7hRD67IOE3xGSXz34/view?usp=sharing
+Walk-through video: https://drive.google.com/file/d/1EPDAG9faRy1imMoezSgkpXqwy2S6kj_b/view?usp=sharing
 
 Screenshot:
 <img src="./assets/images/Screenshot.png">
